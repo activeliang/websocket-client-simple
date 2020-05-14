@@ -53,10 +53,11 @@ module WebSocket
                     emit :open
                   end
                 else
-                  frame << recv_data
-                  while msg = frame.next
-                    emit :message, recv_data
-                  end
+                  emit :message, recv_data
+                  #frame << recv_data
+                  #while msg = frame.next
+                    
+                  #end
                 end
               rescue => e
                 emit :error, e
