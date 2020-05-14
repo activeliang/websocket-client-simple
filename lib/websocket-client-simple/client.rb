@@ -42,7 +42,7 @@ module WebSocket
           @thread = Thread.new do
             while !@closed do
               begin
-                unless recv_data = @socket.getc
+                unless recv_data = @socket.gets
                   sleep 1
                   next
                 end
