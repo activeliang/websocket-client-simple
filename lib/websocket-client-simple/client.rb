@@ -55,7 +55,7 @@ module WebSocket
                 else
                   frame << recv_data
                   while msg = frame.next
-                    emit :message, msg
+                    emit :message, recv_data
                   end
                 end
               rescue => e
